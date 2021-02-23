@@ -1,0 +1,331 @@
+/* #BASE CSS (Initital Setup)
+---------------------------------
+    #HTML5
+    #BODY
+        #TYPOGRAPHY
+        #HELPERS
+        #MEDIA
+            #IMAGES
+            #VIDEOS
+        #COMPONENTS
+            #BUTTONS
+    #LAYOUT
+        #MEDIAQUERIES
+    #SITE STRUCTURE
+        #HEADER
+            #SITE-BRANDING (LOGO)   
+            #SITE NAVIGATION
+        #FOOTER
+        #SECTIONS
+        #SUB PAGES
+--------------------------------- */
+*{box-sizing: border-box;}
+
+/* #TYPOGRAPHY  */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    color: rgba(0,0,0,.7);;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 1em;
+    font-size: 87.5%;
+    line-height: 1.5em;
+    background-color: rgb(255, 245, 232);
+}
+
+h1 {
+    font-size: 3em;
+    line-height: normal;
+}
+
+/* #LINKS */
+a {
+  color: rgba(0,0,0,.4);;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgba(0,0,0,.6);;
+}
+
+/* HELPERS */
+.text-centered {
+  text-align: center;
+}
+
+.text-centered p,
+.mywufooform{
+    max-width: 30em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.subheader {
+  color: rgba(0,0,0,.5);
+  font-weight: normal;
+}
+
+.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.full-width img {
+  width: 100%;
+}
+
+/* #IMAGES */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+img.circular {
+    border-radius: 100%;
+}
+
+/* BUTTONS */
+a.button {
+    display: inline-block;
+    background-color: rgba(0,0,0,.3);
+    color: rgba(255,255,255,.8);
+    border-radius: .5em;
+    padding: 1em 2em .8em 2em;
+    margin: .5em;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: .9em;
+}
+a.button:hover {
+    background-color: rgba(0,0,0,.5);
+}
+
+/* SITE-STRUCTURE */
+
+.site-header,
+.site-footer {
+    text-align: center;
+    padding: 3em 0 2em 0;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+.site-branding h1 {
+    font-size: 2em;
+    margin: 0;
+    font-weight: normal;
+}
+
+.site-navigation ul {
+    margin: 0;
+    padding: 2em 0;
+}
+
+.site-navigation li {
+    margin: 0 .5em;
+    padding: 0;
+    display: inline-block;
+}
+
+.site-navigation a {
+    display: block;
+    padding: 1em .5em;
+    color: rgba(0,0,0,.4);
+}
+
+.site-navigation a:hover,
+.site-navigation a.selected {
+    color: rgba(0,0,0,.6);
+    border-bottom: 0.05em solid rgba(0,0,0,.2);
+}
+
+/* section {
+    padding: 0 0 3em 0; */
+}
+
+.hero {
+    padding:0;
+    background: #dedede;
+    margin-bottom: 6em;
+}
+
+
+/* #THUMBGRID */
+.thumbgrid {
+	flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.thumbgrid a {
+    width: 50%;
+}
+
+@media (min-width:768px) {
+    .thumbgrid a {
+        width: 50%;
+    }
+}
+
+.thumbgrid a img {
+    width: 50vh;
+    height: 50vh;
+    filter: brightness(1.05);
+    transition: all ease-in-out 0.2s;
+    border: 1px solid rgba(255,255,255,0);
+}
+
+.thumbgrid a:hover img {
+    filter: brightness(1);
+    border: 1px solid rgba(0,0,0,.3);
+}
+
+/* Page Fade-ins */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+main,
+fade-in {
+  opacity: 0;
+  animation: fade-in ease-in-out 1;
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+}
+
+@keyframes fade-and-move-in {
+  from {
+    transform: translate(0, -20px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+.fade-and-move-in * {
+  opacity: 0;
+  animation: fade-and-move-in ease-out 1;
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+}
+
+.fade-and-move-in *:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.fade-and-move-in *:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.fade-and-move-in *:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.fade-and-move-in *:nth-child(4) {
+  animation-delay: 0.7s;
+}
+.fade-and-move-in *:nth-child(5) {
+  animation-delay: 1s;
+}
+.fade-and-move-in *:nth-child(6) {
+  animation-delay: 1.2s;
+}
+.fade-and-move-in *:nth-child(7) {
+  animation-delay: 1.4s;
+}
+.fade-and-move-in *:nth-child(8) {
+  animation-delay: 1.6s;
+}
+.fade-and-move-in *:nth-child(9) {
+  animation-delay: 1.8s;
+}
+
+
+.image {
+  position: absolute;
+  left: 10%;
+  top: 0%;
+  bottom: 0%;
+  right: 0%;
+  animation: movetxt 15s linear infinite;
+}
+
+@keyframes movetxt {
+  from {
+    left: 0px;
+  }
+  to {
+    left: -4000px;
+  }
+}
+
+/* Swiper */
+
+.swiper-container {
+  width: 100%;
+}
+
+.swiper-slide {
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+}
+
+/* ZOOM-WRAPPER */
+
+.zoom-wrapper {
+  overflow: hidden;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* The element to apply the animation to */
+.zoom-image {
+  width: 100%;
+  animation-name: zoomIn;
+  animation-duration: 20s;
+  animation-fill-mode: forwards;
+  transform-origin: center;
+  animation-iteration-count: infinite;
+}
+
+@keyframes zoomIn {
+  0% { transform: scale(1); }
+  50%   { transform: scale(1.2);}
+  100% { transform: scale(1); }
+}
+
+/* STICKY */
+.two-column {
+  display: flex;
+}
+
+.left {
+  width: 75%;
+  margin-top: 2em;
+}
+.right {
+  width: 25%;
+}
+.sticky {
+  position: sticky;
+  top: 0;
+  margin-left: 2.5em;
+}
